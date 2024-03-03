@@ -6,18 +6,20 @@
 }
 
 body {
-  background-color: #23a0b1;
-  padding: 2em;
+  background-color: white;
+  padding: 1em;
 }
 
 img {
   width: 75%;
+  border: solid 0.3em black;
 }
 
 main {
   display: flex;
-  background-color: white;
-  padding: 2em;
+  color: white;
+  background-color: #8ab145;
+  padding: 1em;
   box-shadow: 0;
   max-width: 80rem;
   margin: 0 auto;
@@ -28,9 +30,9 @@ main {
 
 #section-input,
 #section-output {
-  background-color: antiquewhite;
-  padding: .8em;
-  border-radius: .8em;
+  background-color: #46679d;
+  padding: 0.8em;
+  border-radius: 0.8em;
 }
 
 #section-input {
@@ -54,8 +56,8 @@ main {
   padding: 0.5em;
   border-radius: 0.3em;
   background-color: darkgrey;
-  margin-top: .1em;
-  margin-bottom: .1em;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
 }
 
 @media screen and (max-width: 700px) {
@@ -63,12 +65,13 @@ main {
     flex-direction: column;
     max-height: fit-content;
   }
-  
+
   img {
     width: 100%;
   }
 
-  #section-input, #section-output{
+  #section-input,
+  #section-output {
     width: 100%;
   }
 }

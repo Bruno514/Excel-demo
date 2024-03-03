@@ -48,20 +48,6 @@ function createMembers(worksheet) {
   });
 }
 
-window.copy = function (e) {
-  const fullText = members[e.dataset.index].fullText;
-
-  navigator.clipboard.writeText(fullText).then(
-    () => {
-      console.log("All Good!");
-    },
-    () => {
-      console.log("Not good at all!");
-      alert("Não foi possível copiar!");
-    }
-  );
-};
-
 function createTextsToCopy() {
   document.getElementById("section-output").textContent = "";
 
@@ -77,3 +63,17 @@ function createTextsToCopy() {
     document.getElementById("section-output").appendChild(wrapper);
   });
 }
+
+window.copy = function (e) {
+  const fullText = members[e.dataset.index].fullText;
+
+  navigator.clipboard.writeText(fullText).then(
+    () => {
+      console.log("All Good!");
+    },
+    () => {
+      console.log("Not good at all!");
+      alert("Não foi possível copiar!");
+    }
+  );
+};
