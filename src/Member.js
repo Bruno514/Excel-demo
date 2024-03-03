@@ -4,6 +4,12 @@ export default class Member {
     this.member = member;
     this.nnf = nnf;
     this.price = price;
+    
+    if (!this.price.toString().includes(",")) {
+      // Conserta a falta da vírgula em valores redondos
+      this.price = this.price + ",00";
+    }
+
     this.dateExpire = dateExpire;
     this.email = email;
   }
@@ -22,11 +28,9 @@ export default class Member {
       .reverse()
       .join("/");
 
-    const fullText = `Olá, ${this.member}, verificamos que o pagamento do boleto da NF ${this.nnf},
-com emissão em ${dateNegotiationFormated}, no valor de R$ ${this.price}, com vencimento em ${dateExpireFormated},
-ainda não foi efetuado. Caso seja necessário uma segunda via ou esclarecimento de dúvidas,
-entre em contato conosco, estamos à disposição, ou caso já tenha pagado o boleto, queira desconsiderar este aviso.`;
+    const fullText = `    Olá, ${this.member}, verificamos que o pagamento do boleto da NF ${this.nnf}, com emissão em ${dateNegotiationFormated}, no valor de R$ ${this.price}, com vencimento em ${dateExpireFormated}, ainda não foi efetuado. 
+    Caso seja necessária uma segunda via ou esclarecimento de dúvidas, entre em contato conosco, estamos à disposição, ou caso já tenha pagado o boleto, queira desconsiderar esta mensagem.\n\nAtenciosamente,`;
 
-    return fullText.replace(/\n/g, " ");
+    return fullText;
   }
 }
