@@ -5,10 +5,10 @@ import "./style.css";
 let members = [];
 
 const inputElement = document.getElementById("file-xslx");
-  inputElement.addEventListener("change", handleFiles, false);
+inputElement.addEventListener("change", handleFiles, false);
 
-  async function handleFiles(e) {
-    const fileRes = e.target.files[0];
+async function handleFiles(e) {
+  const fileRes = e.target.files[0];
 
   const buffer = await readFile(fileRes);
   const workbook = new ExcelJS.Workbook();

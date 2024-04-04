@@ -25,8 +25,15 @@ export default class Member {
       .reverse()
       .join("/");
 
-    const fullText = `    Olá, ${this.member}, verificamos que o pagamento do boleto da NF ${this.nnf}, com emissão em ${dateNegotiationFormated}, no valor de ${this.price}, com vencimento em ${dateExpireFormated}, ainda não foi efetuado. 
-    Caso seja necessária uma segunda via ou esclarecimento de dúvidas, entre em contato conosco, estamos à disposição, ou caso já tenha pagado o boleto, queira desconsiderar esta mensagem.\n\nAtenciosamente,`;
+    const fullText = `Para: ${this.member},
+    
+Informamos que ainda não identificamos o pagamento de nossa NF nº ${this.nnf}, emitida em ${dateNegotiationFormated}, no valor de ${this.price} e vencida em ${dateExpireFormated}.
+Caso já tenha efetuado o pagamento, por favor desconsidere este aviso.
+Se houver algum problema ou se precisar de mais informações, não hesite em nos contatar. Valorizamos a parceria com você e estamos aqui para ajudar a resolver quaisquer dúvidas que possam surgir.
+    
+Agradecemos pela sua atenção.
+    
+Atenciosamente,`;
 
     return fullText;
   }
