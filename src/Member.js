@@ -25,7 +25,8 @@ export default class Member {
       .reverse()
       .join("/");
 
-    const fullText = `Para: ${this.member},
+    const fullText = `Para: 
+${this.member},
     
 Informamos que ainda não identificamos o pagamento de nossa NF nº ${this.nnf}, emitida em ${dateNegotiationFormated}, no valor de ${this.price} e vencida em ${dateExpireFormated}.
 Caso já tenha efetuado o pagamento, por favor desconsidere este aviso.
